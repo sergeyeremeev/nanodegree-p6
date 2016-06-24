@@ -39,13 +39,24 @@ $(function() {
                 expect(singleFeed.name.length).not.toBe(0);
             });
         });
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
     });
 
 
+    describe('The menu', function() {
+        var body = $('body'),
+            menuIcon = $('.menu-icon-link');
+
+        it('should be hidden by default', function() {
+            expect(body.hasClass('menu-hidden')).toBe(true);
+        });
+
+        it('should change visibility on menu icon click', function() {
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(false);
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(true);
+        });
+    });
     /* TODO: Write a new test suite named "The menu" */
 
         /* TODO: Write a test that ensures the menu element is
