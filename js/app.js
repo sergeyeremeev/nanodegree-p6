@@ -132,3 +132,25 @@ $(function() {
         $('body').toggleClass('menu-hidden');
     });
 }());
+
+// feeds search filter
+$(function() {
+    var feedFilter = $('.feed-filter');
+
+    // filter feeds by title on feeds search change
+    feedFilter.on('change keyup touchend', function() {
+        var filterVal = feedFilter.val().toLowerCase();
+
+        // 'unfilter' all feeds by default
+        $('.entry-link').removeClass('filtered');
+
+        // loop through each feed and hide it with 'filtered' class
+        // if it doesn't contain a value from search input
+        $('.feed').find('h2').each(function() {
+            $this = $(this);
+            if ($this.text().toLowerCase().indexOf(filterVal) === -1) {
+                $this.closest('.entry-link').addClass('filtered');
+            }
+        });
+    });
+}());
