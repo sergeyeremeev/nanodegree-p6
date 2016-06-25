@@ -28,5 +28,5 @@ Simply download the project assets and open index.html in your favorite browser.
 
 # Sources
 
-* Udacity JavaScript Testing course;
-* Jasmine official documentation.
+* [Udacity JavaScript Testing course](https://www.udacity.com/course/javascript-testing--ud549);
+* [Jasmine official documentation](http://jasmine.github.io/2.2/introduction.html).
