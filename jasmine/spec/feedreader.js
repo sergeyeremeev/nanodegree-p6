@@ -90,14 +90,15 @@ $(function() {
 
         // load two different feeds and assign html() to our variables, to make sure
         // that the content of feeds changes and not just title in the header (which is hardcoded)
+        // (chain them to make sure both feeds are loaded before running the spec)
         beforeEach(function(done) {
             loadFeed(0, function() {
                 feed0 = $('.feed').html();
-            });
 
-            loadFeed(1, function() {
-                feed1 = $('.feed').html();
-                done();
+                loadFeed(1, function() {
+                    feed1 = $('.feed').html();
+                    done();
+                });
             });
         });
 
